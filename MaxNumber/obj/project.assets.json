@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\git\\C_cviceni\\C_sharp\\MaxNumber\\MaxNumber.csproj",
+      "projectUniqueName": "C:\\git\\C_cviceni\\MaxNumber\\MaxNumber.csproj",
       "projectName": "MaxNumber",
-      "projectPath": "C:\\git\\C_cviceni\\C_sharp\\MaxNumber\\MaxNumber.csproj",
+      "projectPath": "C:\\git\\C_cviceni\\MaxNumber\\MaxNumber.csproj",
       "packagesPath": "C:\\Users\\jakub\\.nuget\\packages\\",
-      "outputPath": "C:\\git\\C_cviceni\\C_sharp\\MaxNumber\\obj\\",
+      "outputPath": "C:\\git\\C_cviceni\\MaxNumber\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\jakub\\AppData\\Roaming\\NuGet\\NuGet.Config",

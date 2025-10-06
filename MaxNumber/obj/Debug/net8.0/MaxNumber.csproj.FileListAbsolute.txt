@@ -1,0 +1,15 @@
+C:\git\C_cviceni\MaxNumber\bin\Debug\net8.0\MaxNumber.exe
+C:\git\C_cviceni\MaxNumber\bin\Debug\net8.0\MaxNumber.deps.json
+C:\git\C_cviceni\MaxNumber\bin\Debug\net8.0\MaxNumber.runtimeconfig.json
+C:\git\C_cviceni\MaxNumber\bin\Debug\net8.0\MaxNumber.dll
+C:\git\C_cviceni\MaxNumber\bin\Debug\net8.0\MaxNumber.pdb
+C:\git\C_cviceni\MaxNumber\obj\Debug\net8.0\MaxNumber.GeneratedMSBuildEditorConfig.editorconfig
+C:\git\C_cviceni\MaxNumber\obj\Debug\net8.0\MaxNumber.AssemblyInfoInputs.cache
+C:\git\C_cviceni\MaxNumber\obj\Debug\net8.0\MaxNumber.AssemblyInfo.cs
+C:\git\C_cviceni\MaxNumber\obj\Debug\net8.0\MaxNumber.csproj.CoreCompileInputs.cache
+C:\git\C_cviceni\MaxNumber\obj\Debug\net8.0\MaxNumber.sourcelink.json
+C:\git\C_cviceni\MaxNumber\obj\Debug\net8.0\MaxNumber.dll
+C:\git\C_cviceni\MaxNumber\obj\Debug\net8.0\refint\MaxNumber.dll
+C:\git\C_cviceni\MaxNumber\obj\Debug\net8.0\MaxNumber.pdb
+C:\git\C_cviceni\MaxNumber\obj\Debug\net8.0\MaxNumber.genruntimeconfig.cache
+C:\git\C_cviceni\MaxNumber\obj\Debug\net8.0\ref\MaxNumber.dll
