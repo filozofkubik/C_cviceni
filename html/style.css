@@ -1,0 +1,25 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fdf6e3;
+    text-align: center;
+    background-image: url('pozadi.jpg'); 
+    background-size: cover; 
+    background-repeat: no-repeat;
+    background-position: center; 
+
+
+}
+
+        ul li:nth-child(odd) {
+    background-color: #00FF00; 
+}
+ ul li:nth-child(even) {
+    background-color: #FF0000; 
+}
+h1 {
+   background-color: #00FF00;  
+}
+h2 {
+   background-color: #FF0000;  
+}
