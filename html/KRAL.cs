@@ -1,4 +1,5 @@
-﻿namespace ConsoleApp8
+﻿namespace ConsoleApp10
+
 {
     internal class Program
     {
@@ -41,46 +42,141 @@
 
                 if(NajdiKrale(kino, out int Krada, out int Ksedlo))
                 {
-                    int[] dx = { -1, 0, 1 };
-                    int[] dy = { -1, 0, 1 };
-                    for (int i = 0; i < dx.Length; i++)
-                    {
-                        for (int j = 0; j < dy.Length; j++)
+                    int[] dx+ = { 0, 1,2,3,4,5,6,7 };
+                    int[] dy+ = {  1,2,3,4,5,6,7 };
+                    int[] dx- = {  -1,-2,-3,-4,-5,-6,-7 };
+                    int[] dy- = { -1,-2,-3,-4,-5,-6,-7 };
+                        for (int i = 0; i < dx.Length; i++)
                         {
                             
-                            int novaRada = Krada + dx[i];
-                            int noveSedlo = Ksedlo + dy[j];
-                                if (dx[i] == 0 && dy[j] == 0)
-                                {
-                                    kino[novaRada, noveSedlo] = OBSAZENO;
-                                }
-
-                                if (novaRada >= 0 && novaRada < POCET_RAD &&
-                                noveSedlo >= 0 && noveSedlo < SeDADLA_NA_RADU)
-                            {
-                                if (kino[novaRada, noveSedlo] ==VOLNY ) 
-                                { kino[novaRada, noveSedlo] = POTENCIAL; }
-                                else if (kino[novaRada, noveSedlo] == OBSAZENO) 
-                                { kino[novaRada, noveSedlo] = OBSAZENO;  }
-                                else if (kino[novaRada, noveSedlo] == KRAL) { kino[novaRada, noveSedlo] = KRAL;  }
-                                else if (kino[novaRada, noveSedlo] == CIL) {
-                                        Console.WriteLine("ANO NALEZENO!");
-                                        Console.WriteLine($"takhle dlouho ({kroky}tah/y)to tlustochovi trvalo");
-                                        ZobrazKino(kino);
-                                        return;
-                                    }
-                                else if (kino[novaRada, noveSedlo] == POTENCIAL) { kino[novaRada, noveSedlo] = POTENCIAL; }
+                        int novaRada = Krada + dx+[i];
+                        int noveSedlo = Ksedlo;
+                        if (dx[i] == 0 && dy[j] == 0)
+                        {
+                            kino[novaRada, noveSedlo] = OBSAZENO;
                             }
+                       
+
+                        if (novaRada >= 0 && novaRada < POCET_RAD &&
+                        noveSedlo >= 0 && noveSedlo < SeDADLA_NA_RADU)
+                                if (kino[novaRada, noveSedlo] == VOLNY)
+                                { kino[novaRada, noveSedlo] = POTENCIAL; }
+                                else if (kino[novaRada, noveSedlo] == CIL)
+                                {
+                                    Console.WriteLine("ANO NALEZENO!");
+                                    Console.WriteLine($"takhle dlouho ({kroky}tah/y)to tlustochovi trvalo");
+                                    ZobrazKino(kino);
+                                    return;
+                                }
+                                else if (kino[novaRada, noveSedlo] == KRAL)
+                                { kino[novaRada, noveSedlo] = KRAL; }
+                                else if (kino[novaRada, noveSedlo] == POTENCIAL) { kino[novaRada, noveSedlo] = POTENCIAL; }
+                                else if (kino[novaRada, noveSedlo] == OBSAZENO)
+                                { break; }
                         }
+
+
+                        for (int j = 0; j < dy.Length; j++)
+
+                        {
+                            int novaRada = Krada;
+                            int noveSedlo = Ksedlo + dy+[i];
+                            if (dx[i] == 0 && dy[j] == 0)
+                            {
+                                kino[novaRada, noveSedlo] = OBSAZENO;
+                            }
+
+
+                            if (novaRada >= 0 && novaRada < POCET_RAD &&
+                            noveSedlo >= 0 && noveSedlo < SeDADLA_NA_RADU)
+                                if (kino[novaRada, noveSedlo] == VOLNY)
+                                { kino[novaRada, noveSedlo] = POTENCIAL; }
+                                else if (kino[novaRada, noveSedlo] == CIL)
+                                {
+                                    Console.WriteLine("ANO NALEZENO!");
+                                    Console.WriteLine($"takhle dlouho ({kroky}tah/y)to tlustochovi trvalo");
+                                    ZobrazKino(kino);
+                                    return;
+                                }
+                                else if (kino[novaRada, noveSedlo] == KRAL)
+                                { kino[novaRada, noveSedlo] = KRAL; }
+                                else if (kino[novaRada, noveSedlo] == POTENCIAL) { kino[novaRada, noveSedlo] = POTENCIAL; }
+                                else if (kino[novaRada, noveSedlo] == OBSAZENO)
+                                { break; }
+
+
+
+
+                        }
+                        for (int k = 0; k < dy.Length; k++)
+                        {
+                            int novaRada = Krada + dx[i];
+                            int noveSedlo = Ksedlo;
+                            if (dx[i] == 0 && dy[j] == 0)
+                            {
+                                kino[novaRada, noveSedlo] = OBSAZENO;
+                            }
+
+
+                            if (novaRada >= 0 && novaRada < POCET_RAD &&
+                            noveSedlo >= 0 && noveSedlo < SeDADLA_NA_RADU)
+                                if (kino[novaRada, noveSedlo] == VOLNY)
+                                { kino[novaRada, noveSedlo] = POTENCIAL; }
+                                else if (kino[novaRada, noveSedlo] == CIL)
+                                {
+                                    Console.WriteLine("ANO NALEZENO!");
+                                    Console.WriteLine($"takhle dlouho ({kroky}tah/y)to tlustochovi trvalo");
+                                    ZobrazKino(kino);
+                                    return;
+                                }
+                                else if (kino[novaRada, noveSedlo] == KRAL)
+                                { kino[novaRada, noveSedlo] = KRAL; }
+                                else if (kino[novaRada, noveSedlo] == POTENCIAL) { kino[novaRada, noveSedlo] = POTENCIAL; }
+                                else if (kino[novaRada, noveSedlo] == OBSAZENO)
+                                { break; }
+
+
+
+
+                        }
+                        for (int l = 0; l < dy.Length; l++)
+                        {
+                            int novaRada = Krada ;
+                            int noveSedlo = Ksedlo + dy[i];
+                            if (dx[i] == 0 && dy[j] == 0)
+                            {
+                                kino[novaRada, noveSedlo] = OBSAZENO;
+                            }
+
+
+                            if (novaRada >= 0 && novaRada < POCET_RAD &&
+                            noveSedlo >= 0 && noveSedlo < SeDADLA_NA_RADU)
+                                if (kino[novaRada, noveSedlo] == VOLNY)
+                                { kino[novaRada, noveSedlo] = POTENCIAL; }
+                                else if (kino[novaRada, noveSedlo] == CIL)
+                                {
+                                    Console.WriteLine("ANO NALEZENO!");
+                                    Console.WriteLine($"takhle dlouho ({kroky}tah/y)to tlustochovi trvalo");
+                                    ZobrazKino(kino);
+                                    return;
+                                }
+                                else if (kino[novaRada, noveSedlo] == KRAL)
+                                { kino[novaRada, noveSedlo] = KRAL; }
+                                else if (kino[novaRada, noveSedlo] == POTENCIAL) { kino[novaRada, noveSedlo] = POTENCIAL; }
+                                else if (kino[novaRada, noveSedlo] == OBSAZENO)
+                                { break; }
+
+
+
+                        }
+
+
+
+
+
+
+
                     }
-
-
-
-
-
-
-
-                }
 
                 else
                 {
