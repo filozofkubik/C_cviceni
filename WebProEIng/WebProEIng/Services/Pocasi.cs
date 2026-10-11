@@ -1,7 +1,9 @@
 ﻿
 using System.Diagnostics;
+using System.Text.Json;
 using System.Xml;
 using System.Xml.Linq;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace WebProEIng.Services
 {
@@ -9,7 +11,7 @@ namespace WebProEIng.Services
     public class Pocasi : IDataProvider
     {
         private const string ChmuXmlUrl =
-            "https://opendata.chmi.cz/meteorology/climate/historical_csv/";
+            "https://opendata.chmi.cz/meteorology/weather/forecast/now/web_pCRntx_101600.json";
 
     private readonly IHttpClientFactory _httpClientFactory;
 
@@ -21,22 +23,28 @@ namespace WebProEIng.Services
 
         public async Task<XElement> ZiskejDataAsync(CancellationToken stoppingToken)
         {
+            
             XDocument dokument = new XDocument();
-            try
-            {
-                HttpClient client = _httpClientFactory.CreateClient();
+          
+         
+                HttpClient http = new HttpClient();
 
 
-                var xml = await client.GetStringAsync(ChmuXmlUrl, stoppingToken);
+                string json = await http.GetStringAsync(ChmuXmlUrl);
 
+                using JsonDocument doc = JsonDocument.Parse(json);
+                var parsovacitrida = new ParserJson(doc);
 
-                 dokument = XDocument.Parse(xml);
-            }
-            catch (Exception ex) { 
-            Debug.WriteLine(ex.Message);
-            }
+                ReadPocasi readpocasi = new ReadPocasi(doc);
+                readpocasi.ZjistiPocasi();
+            string text = this.Nazev;
 
-            return dokument.Root!;
+            Console.WriteLine(readpocasi.VypisPocasi());
+            // Vytvoříme XML element, např.: <aktualniCas>9.10.2026 08:00:00</aktualniCas>
+            var element = new XElement(this.Nazev, text);
+
+            // Tento zdroj nic nestahuje, takže výsledek vrátíme rovnou.
+            return Task.FromResult(element);
         }
     }
 }
