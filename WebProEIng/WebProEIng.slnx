@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="test/test.csproj" Id="eee76012-2c79-4082-955c-a5fca0b0adf2" />
+  <Project Path="WebProEIng/WebProEIng.csproj" />
+</Solution>

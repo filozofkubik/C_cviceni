@@ -1,0 +1,30 @@
+@* Tato stránka jen zobrazí obsah XML souboru, který na pozadí připravuje SberDatSluzba. *@
+@page
+@model KurzyModel
+@{
+    ViewData["Title"] = "Sebraná data (XML)";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+@* Vypíšeme, kde XML soubor na disku leží. *@
+@if (!string.IsNullOrEmpty(Model.XmlCesta))
+{
+    <p class="small text-muted">Zdrojové XML: <code>@Model.XmlCesta</code></p>
+}
+
+@* Tlačítko pro stažení surového XML souboru. *@
+<p>
+    <a asp-page="/Kurzy" asp-page-handler="Raw" class="btn btn-sm btn-outline-primary">Stáhnout XML</a>
+</p>
+
+@* Když je chyba (soubor ještě není), ukážeme hlášku. Jinak vypíšeme XML. *@
+@if (!string.IsNullOrEmpty(Model.Chyba))
+{
+    <div class="alert alert-danger">@Model.Chyba</div>
+}
+else
+{
+    @* <pre> zachová formátování (odsazení a nové řádky) tak, jak je v XML. *@
+    <pre class="border rounded p-3 bg-light"><code>@Model.Xml</code></pre>
+}
